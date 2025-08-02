@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **MedVLThinker** is an open-source recipe for building *reasoning-centric* medical vision-language models.
-It bundles everything you need: cleaned text-only and/or image-text datasets, a difficulty-aware data-curation pipeline, and two turnkey training modes (SFT or RLVR), to reproduce or extend our \textbf{state-of-the-art baselines on six public medical-VQA benchmarks}. By scaling the same recipe from 3 B to 32 B parameters, we show that an open 32 B model can match GPT-4o on accuracy while remaining fully transparent and reproducible.
+It bundles everything you need: cleaned text-only and/or image-text datasets, a difficulty-aware data-curation pipeline, and two turnkey training modes (SFT or RLVR), to reproduce or extend our *state-of-the-art baselines* on six public medical-VQA benchmarks. By scaling the same recipe from 3 B to 32 B parameters, we show that an open 32 B model can match GPT-4o on accuracy while remaining fully transparent and reproducible.
 
 ## 🔥 Highlights
 
