@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/)
 [![Project Page](https://img.shields.io/badge/🌐-Project%20Page-orange)](https://ucsc-vlaa.github.io/MedVLThinker/)
-[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-blue)](https://huggingface.co/UCSC-VLAA)
+[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-blue)](https://huggingface.co/collections/UCSC-VLAA/medvlthinker-688f52224fb7ff7d965d581d)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **MedVLThinker** is an open-source recipe for building *reasoning-centric* medical vision-language models.
@@ -104,13 +104,13 @@ HF_HOME=cache/
 ### Demo
 
 ```python
-from transformers import Qwen2VLForConditionalGeneration, AutoTokenizer, AutoProcessor
+from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
 from qwen_vl_utils import process_vision_info
 import torch
 
 # Load the model
-model_name="UCSC-VLAA/MedVLThinker-7B-RL_m23k"
-model = Qwen2VLForConditionalGeneration.from_pretrained(
+model_name="UCSC-VLAA/MedVLThinker-3B-RL_m23k"
+model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
     model_name,
     torch_dtype=torch.bfloat16,
     device_map="auto"
@@ -118,20 +118,43 @@ model = Qwen2VLForConditionalGeneration.from_pretrained(
 processor = AutoProcessor.from_pretrained(model_name)
 
 # Example usage
-messages = [
-    {{
+messages_1 = [
+    {
+        "role": "system",
+        "content": "You will solve a problem/request. You should provide your thoughts within <think> </think> tags before providing the answer.\nWrite your final answer within <answer> </answer> tags.",
+    },
+    {
         "role": "user",
         "content": [
-            {{
+            {
                 "type": "image",
-                "image": "path/to/medical/image.jpg",
-            }},
-            {{"type": "text", "text": "What can you see in this medical image?"}},
+                "image": "assets/slake_closed.jpg",
+            },
+            {"type": "text", "text": "Which side of lung is abnormal in this image, left or right?"},
         ],
-    }}
+    }
+]
+
+messages_2 = [
+    {
+        "role": "system",
+        "content": "You will solve a problem/request. You should provide your thoughts within <think> </think> tags before providing the answer.\nWrite your final answer within <answer> </answer> tags.",
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "image": "assets/MedXpertQA-MM.jpg",
+            },
+            {"type": "text", "text": "You are shown images of the right and left distal common carotid arteries, respectively. What is the MOST likely diagnosis?"},
+        ],
+    }
 ]
 
 # Preparation for inference
+messages = messages_2
+
 text = processor.apply_chat_template(
     messages, tokenize=False, add_generation_prompt=True
 )
@@ -146,7 +169,7 @@ inputs = processor(
 inputs = inputs.to("cuda")
 
 # Inference
-generated_ids = model.generate(**inputs, max_new_tokens=128)
+generated_ids = model.generate(**inputs, max_new_tokens=2048, temperature=0.6, top_p=0.95, do_sample=True)
 generated_ids_trimmed = [
     out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
 ]
@@ -251,17 +274,18 @@ python data_process/train_dataset/order_easy_to_hard.py \
 
 ```bash
 train/sft/train_commands.sh
+# text sft: train/sft/sft_local.sh
+# image-text sft: train/sft/sft_vlm_local.sh
+
+# convert SFT weights
+train/sft/convert_weights.py
 ```
 
 ### Reinforcement Learning (GRPO)
 
 ```bash
 bash train/*.sh
-```
 
-### Convert Checkpoints
-
-```bash
 # Convert VERL checkpoints for inference
 python third_party/verl/scripts/model_merger.py merge \
     --backend fsdp \
