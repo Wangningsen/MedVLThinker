@@ -188,12 +188,12 @@ print(output_text)
 
 Our project provides several curated datasets for medical vision-language understanding and training:
 
-| Dataset | Description | Download | 
-|---------|-------------|----------|
-| **MedVLThinker-m23k-tokenized** | Tokenized version of the [m23k](https://github.com/UCSC-VLAA/m1) dataset | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-m23k-tokenized) |
-| **MedVLThinker-pmc_vqa-gpt_4o_reasoning-tokenized** | Tokenized PMC-VQA dataset with GPT-4o generated reasoning chains | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-pmc_vqa-gpt_4o_reasoning-tokenized) |
-| **MedVLThinker-pmc_vqa** | Processed PMC-VQA dataset for medical visual question answering with RLVR | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-pmc_vqa) |
-| **MedVLThinker-Eval** | Comprehensive evaluation dataset for medical VQA benchmarks | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-Eval) |
+| Dataset | Modality | Description | Download | 
+|---------|-----|-------------|----------|
+| **MedVLThinker-m23k-tokenized** | Text-only | Tokenized version of the [m23k](https://github.com/UCSC-VLAA/m1) dataset | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-m23k-tokenized) |
+| **MedVLThinker-pmc_vqa-gpt_4o_reasoning-tokenized** | Image-Text | Tokenized PMC-VQA dataset with GPT-4o generated reasoning chains | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-pmc_vqa-gpt_4o_reasoning-tokenized) |
+| **MedVLThinker-pmc_vqa** | Image-Text |Processed PMC-VQA dataset for medical visual question answering with RLVR | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-pmc_vqa) |
+| **MedVLThinker-Eval** | Image-Text|  Comprehensive evaluation dataset for medical VQA benchmarks | [🤗 HF](https://huggingface.co/datasets/UCSC-VLAA/MedVLThinker-Eval) |
 
 ### Dataset Usage
 
