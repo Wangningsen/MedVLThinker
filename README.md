@@ -1,6 +1,6 @@
 # MedVLThinker: Simple Baselines for Multimodal Medical Reasoning
 
-[![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b.svg)](https://arxiv.org/abs/2508.02669)
 [![Project Page](https://img.shields.io/badge/🌐-Project%20Page-orange)](https://ucsc-vlaa.github.io/MedVLThinker/)
 [![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-blue)](https://huggingface.co/collections/UCSC-VLAA/medvlthinker-688f52224fb7ff7d965d581d)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
