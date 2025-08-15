@@ -281,6 +281,8 @@ train/sft/train_commands.sh
 train/sft/convert_weights.py
 ```
 
+Training logs: https://wandb.ai/xk-huang/med-vlrm/workspace?nw=nwuserxkhuang
+
 ### Reinforcement Learning (GRPO)
 
 ```bash

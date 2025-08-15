@@ -85,7 +85,7 @@ def stat_token_len(row, stats_column_name, tokenzier):
 @click.option(
     "--dataset_path",
     type=str,
-    default="med-vlrm/med-vlm-m23k",
+    default="UCSC-VLAA/MedVLThinker-m23k-tokenized",
     help="Remote dataset path if not using local data.",
 )
 @click.option(

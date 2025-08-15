@@ -424,7 +424,7 @@ def build_messages(row, args):
 # chat template
 @click.option("--chat_template", type=str, default=None)
 # dataset
-@click.option("--dataset_name", default="med-vlrm/med-vlm-eval-v2")
+@click.option("--dataset_name", default="UCSC-VLAA/MedVLThinker-Eval")
 @click.option("--subset", default=None)
 @click.option("--split", default="test")
 @click.option(

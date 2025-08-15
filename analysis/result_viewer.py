@@ -73,7 +73,7 @@ result_path_str = sidebar_text_input(
 )
 
 dataset_name = sidebar_text_input(
-    "Dataset name", "dataset_name", "med-vlrm/med-vlm-eval-v2"
+    "Dataset name", "dataset_name", "UCSC-VLAA/MedVLThinker-Eval"
 )
 
 dataset_split = sidebar_text_input("Dataset split", "dataset_split", "test")

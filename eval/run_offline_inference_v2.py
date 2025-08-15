@@ -436,7 +436,7 @@ def build_messages(row, args):
 @click.option("--model_prompt_type", type=str, default=None)
 @click.option("--instruction_prompt", type=str, default=None)
 # dataset
-@click.option("--dataset_name", default="med-vlrm/med-vlm-eval-v2")
+@click.option("--dataset_name", default="UCSC-VLAA/MedVLThinker-Eval")
 @click.option("--subset", default=None)
 @click.option("--split", default="test")
 @click.option(

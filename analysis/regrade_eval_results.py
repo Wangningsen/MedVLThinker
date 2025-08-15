@@ -154,7 +154,7 @@ def regrade_data(data, options_dataset, llava_med_rule=False):
 )
 @click.option(
     "--dataset_name",
-    default="med-vlrm/med-vlm-eval-v2",
+    default="UCSC-VLAA/MedVLThinker-Eval",
     help="Name of the dataset to load.",
 )
 @click.option("--llava_med_rule", is_flag=True, help="Use Llava Med rules for grading.")

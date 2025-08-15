@@ -1,6 +1,6 @@
 # qwen2.5-vl-3b-instruct
 bash train/sft/sft_local.sh \
-    --train_dataset_name med-vlrm/med-vlm-m23k-tokenized \
+    --train_dataset_name UCSC-VLAA/MedVLThinker-m23k-tokenized \
     --model_name "Qwen/Qwen2.5-VL-3B-Instruct" \
     --epochs 5 \
     --gpu_count 8 \
@@ -12,7 +12,7 @@ bash train/sft/sft_local.sh \
 
 # qwen2.5-vl-7b-instruct
 bash train/sft/sft_local.sh \
-    --train_dataset_name med-vlrm/med-vlm-m23k-tokenized \
+    --train_dataset_name UCSC-VLAA/MedVLThinker-m23k-tokenized \
     --model_name "Qwen/Qwen2.5-VL-7B-Instruct" \
     --epochs 5 \
     --gpu_count 8 \
@@ -24,7 +24,7 @@ bash train/sft/sft_local.sh \
 
 # qwen2.5-vl-32b-instruct
 bash train/sft/sft_local.sh \
-    --train_dataset_name med-vlrm/med-vlm-m23k-tokenized \
+    --train_dataset_name UCSC-VLAA/MedVLThinker-m23k-tokenized \
     --model_name "Qwen/Qwen2.5-VL-32B-Instruct" \
     --epochs 5 \
     --gpu_count 8 \

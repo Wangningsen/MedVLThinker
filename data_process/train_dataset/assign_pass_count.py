@@ -4,7 +4,7 @@ Add `pass_count` field to the dataset based on the results from a JSONL file.
 `pass_count=-1` indicates that the sample was not evaluated.
 
 python data_process/train_dataset/assign_pass_count.py \
-    --dataset_name med-vlrm/med-vlm-m23k \
+    --dataset_name UCSC-VLAA/MedVLThinker-m23k-tokenized \
     --split train \
     --results_jsonl_path outputs/estimate_pass_rate/Qwen2.5-VL-7B-Instruct/med-vlm-m23k/eval_results.jsonl
 """

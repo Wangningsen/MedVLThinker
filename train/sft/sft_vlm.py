@@ -27,7 +27,7 @@ class TrainingConfig:
     model_name: str = field(default="Qwen/Qwen2.5-VL-3B-Instruct")
     block_size: int = field(default=32768)
     train_file_path: Optional[str] = field(
-        default="med-vlrm/med-vlm-pmc_vqa-gpt_4o_reasoning-tokenized"
+        default="UCSC-VLAA/MedVLThinker-pmc_vqa-gpt_4o_reasoning-tokenized"
     )
     dagger: bool = field(default=False)
     use_flash_attention_2: bool = field(default=False)
