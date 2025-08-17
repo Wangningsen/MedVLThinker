@@ -38,8 +38,8 @@ It bundles everything you need: cleaned text-only and/or image-text datasets, a 
 ### Option 1: Docker Setup (Recommended)
 
 ```bash
-git clone https://github.com/xk-huang/med-vlrm.git
-cd med-vlrm
+git clone git@github.com:UCSC-VLAA/MedVLThinker.git
+cd MedVLThinker
 
 # Clone VERL for reinforcement learning
 git clone https://github.com/volcengine/verl.git third_party/verl
@@ -65,19 +65,19 @@ docker run -itd \
 -e HOME=$HOME \
 -e USER=$USER \
 --memory 900g \
---name med-vlrm \
+--name MedVLThinker \
 whatcanyousee/verl:ngc-cu124-vllm0.8.5-sglang0.4.6-mcore0.12.0-te2.3 \
 bash
 
-docker exec -it med-vlrm bash
+docker exec -it MedVLThinker bash
 pip3 install -e third_party/verl[vllm]
 ```
 
 ### Option 2: Local Installation
 
 ```bash
-git clone https://github.com/xk-huang/med-vlrm.git
-cd med-vlrm
+git clone git@github.com:UCSC-VLAA/MedVLThinker.git
+cd MedVLThinker
 
 # Install dependencies
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
@@ -91,7 +91,7 @@ Create a `.env` file in the project root:
 
 ```env
 WANDB_API_KEY=your_wandb_key
-WANDB_PROJECT=med-vlrm
+WANDB_PROJECT=MedVLThinker
 WANDB_MODE=online
 WANDB_ENTITY=your_entity
 
@@ -421,7 +421,7 @@ Comparison with other methods.
 ## 📁 Project Structure
 
 ```
-med-vlrm/
+MedVLThinker/
 ├── analysis/           # Result analysis and visualization
 ├── data_process/       # Data preprocessing and preparation
 ├── docs/              # Documentation
